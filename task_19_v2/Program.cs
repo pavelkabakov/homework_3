@@ -5,22 +5,12 @@
 // 12821 -> да
 // 23432 -> да
 
-// Вариант если изучить документацию и использовать работу со строками
-// создал вторую строку, отзеркалил строку и сравнил
+// вариант если не использовать работу со строками
 
 Console.WriteLine("Введите число, для проверки на паллиндром");
-string str = Console.ReadLine();  
-
-System.Text.StringBuilder sb = new System.Text.StringBuilder(str);
-
-for (int i = 0; i < str.Length; i++)
-{
-    sb[i] = (str[str.Length - i - 1]);
-}
-string strBack = sb.ToString();
-Console.WriteLine(strBack);
-
-if (str == strBack)
+string str = Console.ReadLine();
+int length = str.Length;
+if (detectPalindrom(str))
 {
     Console.WriteLine($"Число {str} является паллиндромом");
 }
@@ -28,4 +18,23 @@ else
 {
     Console.WriteLine($"Число {str} не является паллиндромом");
 }
+
+bool detectPalindrom(string str)
+{
+    bool palindrom = false;
+    for (int i = 0; i < (length - 1) / 2; i++)
+    {
+        if (str[i] != str[length - 1 - i])
+        {
+            palindrom = false;
+            break;
+        }
+        palindrom = true;
+    }
+    return palindrom;
+}
+
+
+
+
 
