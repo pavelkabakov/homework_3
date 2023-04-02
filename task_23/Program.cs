@@ -16,5 +16,4 @@ void GetPowTable (int number)
     {
         Console.WriteLine(Math.Pow(i, 3));
     }
-    
 }
