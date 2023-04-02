@@ -22,9 +22,9 @@ else
 bool detectPalindrom(string str)
 {
     bool palindrom = false;
-    for (int i = 0; i < (length - 1) / 2; i++)
+    for (int i = 0; i < (str.Length - 1) / 2; i++)
     {
-        if (str[i] != str[length - 1 - i])
+        if (str[i] != str[str.Length - 1 - i])
         {
             palindrom = false;
             break;
